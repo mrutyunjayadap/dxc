@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <h2><center>Customer Login</center></h2>
+        <script type="text/javascript">
+        function check()
+        {
+            var username=document.getElementById("username").value
+            var password=document.getElementById("password").value
+            var usernameerror=document.getElementById("usernameerror")
+            var passworderror=document.getElementById("passworderror")
+            var congrats=document.getElementById("congrats")
+            if(username.length==0)
+            {
+                usernameerror.innerHTML="<font color=red>username is mandatory</font>"
+            }
+            else
+            {
+                usernameerror.innerHTML="<font color=red></font>"
+            }
+            if(password.length==0)
+            {
+                passworderror.innerHTML="<font color=red>password is mandatory</font>"
+            }
+            else if(password.length<=5 || password.length>=11)
+            {
+                passworderror.innerHTML="<font color=red>password should have 6-12 letters</font>"
+            }
+            else if (password.charAt(0)!= "A")
+            {
+                passworderror.innerHTML="<font color=red>password should start with A</font>"
+            }
+            else
+            {
+                passworderror.innerHTML="<font color=red></font>"
+                congrats.innerHTML="<font color=red>Congrats you have successfully logged in</font>"
+            }
+        }
+        </script>
+    </head>
+    <body bgcolor="yellow" text="blue">
+        <form>
+            username=<input type="text" name="username" id="username"><span id="usernameerror"></span>
+        </br></br>
+        password=<input type="password" name="password" id="password"><span id="passworderror"></span>
+    </br>
+    <input type="button" value="check" onclick="check()">
+    <div id="congrats"></div>
+        </form>
+    </body>
+</html>
