@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <style>
+        #limit{
+            height:100px;
+            width:150px;
+        }
+    </style>
+    <script src="jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#limit").keypress(function () {
+                var a=document.getElementById("limit").value
+                if (a.length>=15){
+                    return false
+                }
+                else{
+                    return true
+                }
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    Character limit:<input type="text" id="limit"></br>
+</body>
+
+</html>
